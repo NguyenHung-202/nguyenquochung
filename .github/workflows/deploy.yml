@@ -1,0 +1,7 @@
+- name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          # Quan trọng: Cấu trúc tag phải là [Username]/[Tên-Image]:[Phiên-bản]
+          tags: ${{ secrets.DOCKER_USERNAME }}/spring-boot-hutech:latest
